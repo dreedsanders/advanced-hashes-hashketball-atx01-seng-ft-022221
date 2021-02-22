@@ -220,9 +220,22 @@ def big_shoe_rebounds
   player_with_big_size[:rebounds]
 end
 
-
+#locate players
+#find each players points 
+#return name of player with most points scored 
 
 def most_points_scored
+  mst_pnts = 0 
+  player_with_most = ""
+  game_hash.each do |team, stats|
+    stats[:players].each do |name|
+      if name[:points] > mst_pnts
+        mst_pnts = name[:points]
+        player_with_most = name[:player_name]
+      end
+    end
+    binding.pry
+  end
 end
 
 
